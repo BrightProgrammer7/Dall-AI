@@ -35,33 +35,33 @@ function TextGenerator() {
     e.preventDefault();
 
     // const response = await openai.listModels();
-    // const response = await openai.createCompletion({
-    //   model: "text-davinci-003",
-    //   prompt: prompt,
-    //   temperature: 0.5,
-    //   max_tokens: 200,
-    //   top_p: 1.0,
-    //   n: 1,
-    //   frequency_penalty: 0.0,
-    //   presence_penalty: 0.0,
-    //   stream: false,
-    //   logprobs: null,
-    //   // stop: ["\n"],
-    // });
-    // const res = response.data.choices[0].text;
-    // setOutput(res);
-
-    const response = await openai.ChatCompletion.create({
-      model: "gpt-3.5-turbo",
-      // prompt: prompt,
-      messages: [{"role": "user", "content": prompt}],
-      prompt: [
-        {"role": "system", "content": `You are chatting with an AI with ${req.session.personality} personality.`},
-        {"role": "user", "content": `Hello, my name is ${req.session.name}.`}
-      ].join('\n'),
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: prompt,
       temperature: 0.5,
-      maxTokens: 500,
-    })
+      max_tokens: 200,
+      top_p: 1.0,
+      n: 1,
+      frequency_penalty: 0.0,
+      presence_penalty: 0.0,
+      stream: false,
+      logprobs: null,
+      // stop: ["\n"],
+    });
+    const res = response.data.choices[0].text;
+    setOutput(res);
+
+    // const response = await openai.ChatCompletion.create({
+    //   model: "gpt-3.5-turbo",
+    //   // prompt: prompt,
+    //   messages: [{"role": "user", "content": prompt}],
+    //   prompt: [
+    //     {"role": "system", "content": `You are chatting with an AI with ${req.session.personality} personality.`},
+    //     {"role": "user", "content": `Hello, my name is ${req.session.name}.`}
+    //   ].join('\n'),
+    //   temperature: 0.5,
+    //   maxTokens: 500,
+    // })
     // .then(function(response) {
     //   const res = response.choices[0].message.content.trim();
     //   setOutput(res);
@@ -69,13 +69,13 @@ function TextGenerator() {
     // .catch(function(error) {
     //   console.error(error);
     // });
-    const bot = response.choices[0].message.content.trim();
-    response.session.prompt += `${bot}`;
-    twiml.message(bot);
-    const res = response.type('text/xml').send(twiml.toString());
+    // const bot = response.choices[0].message.content.trim();
+    // response.session.prompt += `${bot}`;
+    // twiml.message(bot);
+    // const res = response.type('text/xml').send(twiml.toString());
     // console.log(response);
     // const res = response.choices[0].message.content;
-    setOutput(res);
+    // setOutput(res);
   };
 
   return (
