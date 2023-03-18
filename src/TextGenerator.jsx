@@ -20,7 +20,6 @@ function TextGenerator() {
   const [output, setOutput] = useState('');
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_Open_AI_Key,
-    // organization: 'org-kP8I1QdiKMtEzQcX9TT3hlnc',
     // organization: 'personal-11396',
   });
 
