@@ -11,7 +11,6 @@ function ImageGenerator() {
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_Open_AI_Key,
     // organization: 'personal-11396',
-    // organization: 'org-kP8I1QdiKMtEzQcX9TT3hlnc',
   });
 
   const openai = new OpenAIApi(configuration);
