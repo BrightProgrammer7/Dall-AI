@@ -80,7 +80,7 @@ function TextGenerator() {
   return (
     <div className="outputGenerator">
       <form onSubmit={generateOutput}>
-        <p className="">Hello ABDELILAH, How can I help you ?</p>
+        <p className="">Hello GUEST, How can I help you ?</p>
         <input
           className="ipt"
           type="text"
