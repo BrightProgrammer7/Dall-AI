@@ -19,8 +19,8 @@ function TextGenerator() {
   const [prompt, setPrompt] = useState("");
   const [output, setOutput] = useState('');
   const configuration = new Configuration({
-    apiKey: import.meta.env.VITE_Open_AI_Key,
-    // organization: 'personal-11396',
+    apiKey: import.meta.env.VITE_OPENAI_KEY,
+    organization: import.meta.env.VITE_ORGANIZATION_KEY,
   });
 
 
