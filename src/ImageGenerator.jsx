@@ -8,6 +8,7 @@ import "./ImageGenerator.css";
 function ImageGenerator() {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_OPENAI_KEY,
     organization: import.meta.env.VITE_ORGANIZATION_KEY,
@@ -16,7 +17,7 @@ function ImageGenerator() {
   const openai = new OpenAIApi(configuration);
 
   const generateImage = async () => {
-
+    setLoading(true);
     const response = await openai.createImage({
       // prompt: "a white siamese cat",
       prompt: prompt,
@@ -24,6 +25,7 @@ function ImageGenerator() {
       size: "1024x1024",
     });
     // image_url = response.data.data[0].url;
+    setLoading(false);
     setImage(response.data.data[0].url);
   };
   return (
@@ -36,7 +38,8 @@ function ImageGenerator() {
         }}
       />
       <button className="btn" onClick={generateImage}>Generate an Image</button>
-      <img className="img" src={image || ""} alt="" />
+{loading : 'LOADING' || <img className="img" src={image || ""} alt="" /> }
+      
     </div>
   );
 }
