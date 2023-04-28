@@ -1,5 +1,3 @@
-"User-Agent"
-
 import React from "react";
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
@@ -25,8 +23,9 @@ function ImageGenerator() {
       size: "1024x1024",
     });
     // image_url = response.data.data[0].url;
-    setLoading(false);
     setImage(response.data.data[0].url);
+    setLoading(false);
+    
   };
   return (
     <div className="imageGenerator">
@@ -38,10 +37,10 @@ function ImageGenerator() {
         }}
       />
       <button className="btn" onClick={generateImage}>Generate an Image</button>
-{loading ? 'LOADING' : <img className="img" src={image || ""} alt="" /> }
+      {loading ? 'LOADING...' : <img className="img" src={image || ""} alt="" /> }
       
     </div>
   );
-}
+}c
 
 export default ImageGenerator;
