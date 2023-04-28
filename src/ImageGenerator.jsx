@@ -41,6 +41,6 @@ function ImageGenerator() {
       
     </div>
   );
-}c
+}
 
 export default ImageGenerator;
