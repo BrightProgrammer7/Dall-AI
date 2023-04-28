@@ -7,7 +7,6 @@ function Home(props) {
   return (
     <div>
         <h1>HELLO in AkhmimGPT</h1>
-        <button onClick={() => navigate("/text")}>Want to generate text</button>
         <button onClick={() => navigate("/image")}>Want to generate image</button>
     </div>
   )
