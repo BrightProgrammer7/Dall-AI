@@ -2,7 +2,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ImageGenerator from "./ImageGenerator";
-import TextGenerator from "./TextGenerator";
 import Home from "./Home";
 
 function App() {
@@ -16,8 +15,6 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Set up the route for the image generator with the ImageGenerator component. */}
         <Route path="/image" element={<ImageGenerator />} />
-        {/* Set up the route for the text generator with the TextGenerator component. */}
-        <Route path="/text" element={<TextGenerator />} />
       </Routes>
     </Router>
   );
