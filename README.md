@@ -1,2 +1,2 @@
 # Dall-AI
-https://dall-ai.vercel.app/
+https://akhmim-dall-e.vercel.app/
