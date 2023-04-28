@@ -38,7 +38,7 @@ function ImageGenerator() {
         }}
       />
       <button className="btn" onClick={generateImage}>Generate an Image</button>
-{loading : 'LOADING' || <img className="img" src={image || ""} alt="" /> }
+{loading ? 'LOADING' : <img className="img" src={image || ""} alt="" /> }
       
     </div>
   );
